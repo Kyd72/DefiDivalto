@@ -1,0 +1,95 @@
+<!doctype html>
+<html class="no-js" lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Défi DIVALTO</title>
+  <meta name="description" content="Jeu de cache-cache sur le thème des surpers héros Marvel. Parviendrez-vous à obtenir
+le meilleur score ?">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/other.css">
+
+  <meta name="theme-color" content="#fafafa">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+
+<header id ="en_tete">
+  <div id="logo">
+    <img id="image1" src="img\spiderman_qui_saute.png" >
+  </div>
+
+  <div id="chrono" >
+
+
+    <button id="pause_btn" v-on:click="stopChrono" > Pause </button>
+
+    <span id="chrono_text" v-on:click="startChrono">Temps écoulé : {{minutes}}: {{secondes}}</span>
+
+  </div>
+
+  <script>
+
+    const chronoManager=Vue.createApp({
+    data(){
+      return{
+        minutes: 0,
+        secondes: 0,
+        totalSecondes: 0,
+        timer:''
+      };
+    },
+    methods : {
+
+      startChrono (){
+        var v = this;
+        v.timer = setInterval(function (){
+          v.minutes = Math.floor(++v.totalSecondes / 60);
+          v.secondes = v.totalSecondes - (v.minutes * 60);
+        } , 1000);
+
+      },
+
+      stopChrono(){clearInterval(this.timer)}
+
+    }
+  }).mount('#chrono','#button_pause');
+  </script>
+  <div id="score_joueur">
+    <span>Score : </span>
+  </div>
+</header>
+
+
+<section id="container_image">
+  <img id="image" src="img\spiderman_qui_saute.png" >
+</section>
+
+  <!-- Add your site or application content here -->
+
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

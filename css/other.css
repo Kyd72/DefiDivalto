@@ -1,0 +1,80 @@
+
+#en_tete{
+  content: "";
+  display: table;
+  clear: both;
+  width: 100%;
+
+  border: 3px solid #FAAD21;
+}
+div {
+
+  border: 3px solid #73AD21;
+}
+
+#chrono{
+  border: 3px solid #73AD21;
+  float: left;
+  height: 4em;
+  width: 16%;
+  margin-right:5%;
+  padding: 0 10px;
+}
+
+
+
+
+
+#logo{
+  border: 3px solid #73AD21;
+  float: left;
+  height: 4em;
+  width: 5%;
+  margin-right:50%;
+  padding: 0 10px;
+}
+
+#image2, #image1{
+  height:100%;
+  width: 70%;
+}
+
+#pause_btn, #chrono_text{
+  margin: auto;
+  height:100%;
+  width: 40%;
+}
+
+#chrono_text{
+  margin-left: 10%}
+
+#score_joueur{
+  border: 3px solid #73AD21;
+  float: left;
+  height: 4em;
+  width: 5%;
+  margin-right:5%;
+  padding: 0 10px;
+}
+
+#button_pause{
+  border: 3px solid #73AD21;
+
+  float: left;
+  height: 4em;
+  width: 5%;
+  margin-right:5%;
+  padding: 0 10px;
+}
+
+#container_image{
+  margin: auto;
+  width: 50%;
+  position: center;
+
+  border: 3px solid #73AD21;
+  padding: 10px;
+
+}
+
+
